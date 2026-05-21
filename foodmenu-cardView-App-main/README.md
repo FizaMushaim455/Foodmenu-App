@@ -1,124 +1,266 @@
-# 🍕 FoodMenu — Android CardView + RecyclerView Demo
+> **Submitted by:** Fiza Mushaim (2023-ag-9944)  
+> **Submitted to:** Mam Wajeeha  
+> **Course:** SE-512  
+> **Program:** BS(SE) M1 6th Semester
 
-A minimal, polished Android app (Kotlin) that demonstrates **CardView inside RecyclerView** with click handling and screen-to-screen data passing.
+# 🍕 FoodMenu — Android RecyclerView & CardView Demo
 
----
+A clean and modern Android application built with Kotlin that showcases the implementation of **RecyclerView**, **Material CardView**, item click handling, and activity navigation.
 
-## What the App Does
-
-- **Main screen** — A vertically scrollable list of food cards. Each card shows the food's icon, name, category, and price.
-- **Detail screen** — Tap any card to navigate to a detail page showing the full description, price, and ingredients list.
-- **Back navigation** — The detail screen has a toolbar back arrow to return to the list.
-
----
-
-## Project Structure
-
-```
-app/src/main/
-├── java/com/example/foodmenu/
-│   ├── FoodItem.kt          # Data model (Serializable)
-│   ├── FoodData.kt           # Static sample data provider
-│   ├── FoodAdapter.kt        # RecyclerView.Adapter with click listener
-│   ├── MainActivity.kt       # Main screen — sets up RecyclerView
-│   └── FoodDetailActivity.kt # Detail screen — shows full food info
-│
-├── res/layout/
-│   ├── activity_main.xml     # RecyclerView container
-│   ├── item_food_card.xml    # CardView layout for each list item
-│   └── activity_food_detail.xml # Detail screen layout
-│
-├── res/drawable/
-│   ├── ic_food_pizza.xml     # Vector icon drawables for each food
-│   ├── ic_food_salad.xml
-│   ├── ic_food_fish.xml
-│   ├── ic_food_rice.xml
-│   ├── ic_food_burger.xml
-│   ├── ic_food_cake.xml
-│   ├── ic_food_drink.xml
-│   ├── ic_food_bread.xml
-│   └── bg_category_badge.xml # Rounded pill background shape
-│
-├── res/values/
-│   ├── colors.xml            # App color palette
-│   ├── strings.xml           # String resources
-│   └── themes.xml            # Material theme definition
-│
-└── AndroidManifest.xml       # Activity declarations
-```
+This project is ideal for beginners learning Android UI development and RecyclerView fundamentals.
 
 ---
 
-## How to Set Up, Build & Run
+## ✨ Features
+
+- Modern food menu interface using Material Design
+- RecyclerView with custom CardView items
+- Detailed food information screen
+- Smooth navigation between activities
+- Toolbar back navigation support
+- Simple and beginner-friendly Kotlin codebase
+
+---
+
+## 📱 App Overview
+
+### Main Screen
+Displays a scrollable list of food items including:
+- Food image/icon
+- Name
+- Category
+- Price
+
+### Detail Screen
+When a food card is tapped, the app opens a detailed screen showing:
+- Full food description
+- Ingredients
+- Price information
+
+---
+
+## 🛠 Tech Stack
+
+- **Language:** Kotlin
+- **UI Components:** RecyclerView, MaterialCardView
+- **Architecture:** Activity-based structure
+- **Design:** Material Design 3
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-- **Android Studio** Hedgehog (2023.1) or newer
-- **JDK 17** (bundled with Android Studio)
-- An Android emulator or physical device (API 24+ / Android 7.0+)
 
-### Step-by-Step
+Before running the project, make sure you have:
 
-1. **Download / unzip** this `FoodMenu` folder to your computer.
-
-2. **Open in Android Studio**:
-   - Launch Android Studio
-   - Click **File → Open** (or "Open" on the welcome screen)
-   - Navigate to the `FoodMenu` folder and click **OK**
-   - Wait for Gradle sync to complete (you'll see progress in the bottom bar)
-
-3. **If Gradle sync fails** with a "Gradle version" error:
-   - Android Studio may offer to update Gradle — click **OK / Update**
-   - Or go to **File → Project Structure → Project** and set Gradle version to your installed one
-
-4. **Select a run target**:
-   - **Emulator**: Go to **Tools → Device Manager → Create Device** and pick a Pixel phone with API 34
-   - **Physical device**: Enable Developer Options & USB Debugging on your phone, then connect via USB
-
-5. **Run the app**:
-   - Click the green **Run ▶** button in the toolbar (or press `Shift + F10`)
-   - Select your emulator or connected device
-   - The app builds and launches automatically
-
-6. **Use the app**:
-   - Scroll through the list of food cards
-   - Tap any card to see its details
-   - Press the back arrow to return to the list
+- Android Studio Hedgehog (2023.1+) or newer
+- JDK 17
+- Android Emulator or Physical Device
+- Minimum Android API 24+
 
 ---
 
-## Key Concepts Demonstrated
+## ▶️ Installation & Setup
 
-| Concept | Where to Look |
-|---|---|
-| **CardView** with rounded corners & elevation | `item_food_card.xml` — `MaterialCardView` attributes |
-| **RecyclerView** setup | `MainActivity.kt` — `LinearLayoutManager` + adapter |
-| **ViewHolder pattern** | `FoodAdapter.kt` — inner class `FoodViewHolder` |
-| **Click handling** on RecyclerView items | `FoodAdapter.kt` — lambda callback `onItemClick` |
-| **Passing data between Activities** | `MainActivity.kt` → `Intent.putExtra()` → `FoodDetailActivity.kt` |
-| **Serializable data model** | `FoodItem.kt` — implements `Serializable` |
-| **Vector drawable icons** | `res/drawable/ic_food_*.xml` |
-| **Material Design theming** | `themes.xml` + `colors.xml` |
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/foodmenu-cardView-App.git
+cd foodmenu-cardView-App
+```
+
+### 2. Open in Android Studio
+
+1. Launch **Android Studio**
+2. Select **File** → **Open**
+3. Navigate to the cloned project folder and open it
+4. Android Studio will automatically load the Gradle dependencies
+
+### 3. Build the Project
+
+```bash
+# Using Gradle wrapper (recommended)
+./gradlew build
+```
+
+Or in Android Studio:
+- Select **Build** → **Make Project** (or press Ctrl+F9)
+
+### 4. Run the App
+
+#### Option A: Using Android Studio
+1. Select an emulator or connect a physical device
+2. Click **Run** → **Run 'app'** (or press Shift+F10)
+
+#### Option B: Using Command Line
+```bash
+./gradlew installDebug
+adb shell am start -n com.example.foodmenu/.MainActivity
+```
 
 ---
 
-## How to Modify
+## 📁 Project Structure
 
-- **Add a new food item**: Add a `FoodItem(...)` entry in `FoodData.kt` and create a matching icon drawable.
-- **Change colors**: Edit `res/values/colors.xml`.
-- **Change card appearance**: Edit `item_food_card.xml` — adjust `cardCornerRadius`, `cardElevation`, padding, etc.
-- **Use real images**: Replace the `ImageView` + drawable approach with an image-loading library like **Coil** or **Glide** and use URLs instead of resource IDs.
+```
+foodmenu-cardView-App/
+├── app/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/example/foodmenu/
+│   │   │   │   ├── MainActivity.kt          # Main screen with RecyclerView
+│   │   │   │   ├── DetailActivity.kt        # Detail screen
+│   │   │   │   ├── FoodAdapter.kt           # RecyclerView adapter
+│   │   │   │   └── FoodItem.kt              # Data model
+│   │   │   ├── res/
+│   │   │   │   ├── layout/                  # XML layouts
+│   │   │   │   ├── drawable/                # Icons and images
+│   │   │   │   └── values/                  # Colors, strings, styles
+│   │   │   └── AndroidManifest.xml
+│   │   └── test/                             # Unit tests
+│   ├── build.gradle.kts
+│   └── proguard-rules.pro
+├── gradle/                                   # Gradle wrapper
+├── build.gradle.kts
+└── README.md
+```
 
 ---
 
-## Minimum API & Dependencies
+## 💻 How to Use
 
-- **minSdk**: 24 (Android 7.0)
-- **targetSdk**: 34 (Android 14)
-- **Kotlin**: 1.9.22
-- **Material Components**: 1.11.0
-- **CardView**: 1.0.0
-- **RecyclerView**: 1.3.2
+### Viewing Food Items
+1. Launch the app
+2. Browse through the food menu displayed in a scrollable list
+3. Each card shows:
+   - Food image
+   - Name
+   - Category (e.g., Appetizer, Main Course, Dessert)
+   - Price
+
+### Viewing Food Details
+1. Tap on any food card
+2. The detail screen will display:
+   - Complete food description
+   - Ingredients list
+   - Price information
+3. Use the back button to return to the main menu
 
 ---
 
-Happy coding! 🎉
+## 🎯 Key Components
+
+### RecyclerView
+- Efficiently displays a scrollable list of food items
+- Uses ViewHolder pattern for optimal performance
+- Smooth scrolling with hundreds of items
+
+### CardView
+- Modern Material Design cards
+- Elevated appearance with shadows
+- Responsive to touch interactions
+- Clean UI with rounded corners
+
+### Adapter
+- Custom `FoodAdapter` class handles:
+  - Data binding to RecyclerView
+  - Click listeners for item selection
+  - ViewHolder management
+
+---
+
+## 🔧 Technologies & Dependencies
+
+- **Kotlin:** 1.9.0+
+- **Gradle:** 8.0+
+- **AndroidX:** Latest stable versions
+- **Material Components:** 1.9.0+
+- **Minimum SDK:** 24
+- **Target SDK:** 34
+
+---
+
+## 📸 Screenshots
+
+*Add screenshots of your app here:*
+- Main screen with food menu
+- Detail screen showing food information
+
+---
+
+## 🐛 Troubleshooting
+
+### Build Issues
+**Problem:** Gradle sync fails
+- **Solution:** 
+  - Update Android Studio to the latest version
+  - Check your internet connection
+  - Try: **File** → **Invalidate Caches** → **Restart**
+
+**Problem:** Emulator won't start
+- **Solution:**
+  - Ensure hardware virtualization is enabled in BIOS
+  - Try creating a new AVD with recommended settings
+  - Check available disk space
+
+### Runtime Issues
+**Problem:** App crashes on startup
+- **Solution:**
+  - Check logcat for errors: **View** → **Tool Windows** → **Logcat**
+  - Verify minimum SDK version matches device
+  - Check AndroidManifest.xml permissions
+
+---
+
+## 📝 Learning Resources
+
+- [Android RecyclerView Documentation](https://developer.android.com/guide/topics/ui/layout/recyclerview)
+- [Material Design CardView](https://developer.android.com/guide/topics/ui/layout/cardview)
+- [Kotlin for Android](https://developer.android.com/kotlin)
+- [Android Architecture Best Practices](https://developer.android.com/topic/architecture)
+
+---
+
+## 📄 License
+
+This project is provided for educational purposes as part of the SE-512 course.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit issues and enhancement requests.
+
+### Steps to Contribute
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## ❓ FAQ
+
+**Q: Can I use this project for my own learning?**  
+A: Yes! This project is designed as an educational resource.
+
+**Q: How do I modify the food menu items?**  
+A: Edit the `FoodItem` data or load from a data source/API in the MainActivity.
+
+**Q: Is this compatible with older Android versions?**  
+A: The minimum SDK is 24. For earlier versions, some Material Design features may not work.
+
+---
+
+## 📧 Contact & Support
+
+For questions or support regarding this project:
+- **Created by:** Fiza Mushaim
+- **Email:** [Your Email]
+- **GitHub:** [Your GitHub Profile]
+
+---
+
+**Happy Coding! 🚀**
