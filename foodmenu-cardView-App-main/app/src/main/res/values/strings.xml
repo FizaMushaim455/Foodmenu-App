@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Food Menu</string>
+    <string name="food_icon_desc">Food item icon</string>
+    <string name="label_description">Description</string>
+    <string name="label_ingredients">Ingredients</string>
+</resources>

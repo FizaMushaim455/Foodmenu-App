@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_food_card.xml — Layout for ONE food card inside the RecyclerView.
+
+    This is the core of the demo: a MaterialCardView that wraps the
+    food thumbnail, name, category, and price. Each card has rounded
+    corners, elevation (shadow), and a ripple effect on tap.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/card_background"
+    app:rippleColor="@color/ripple_color">
+
+    <!--
+        Inner layout: icon on the left, text info on the right.
+        ConstraintLayout keeps everything aligned without nesting.
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Food thumbnail / icon -->
+        <ImageView
+            android:id="@+id/foodIcon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:contentDescription="@string/food_icon_desc"
+            android:scaleType="centerInside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:src="@drawable/ic_food_pizza" />
+
+        <!-- Food name (bold, prominent) -->
+        <TextView
+            android:id="@+id/foodName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            app:layout_constraintStart_toEndOf="@id/foodIcon"
+            app:layout_constraintEnd_toStartOf="@id/foodPrice"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Margherita Pizza" />
+
+        <!-- Category tag (smaller, muted) -->
+        <TextView
+            android:id="@+id/foodCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintStart_toEndOf="@id/foodIcon"
+            app:layout_constraintEnd_toStartOf="@id/foodPrice"
+            app:layout_constraintTop_toBottomOf="@id/foodName"
+            tools:text="Main Course" />
+
+        <!-- Price (aligned to the right side of the card) -->
+        <TextView
+            android:id="@+id/foodPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/price_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="$12.99" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#FF6B35</color>
+    <color name="background_light">#FFF5F0</color>
+    <color name="badge_background">#FF6B35</color>
+    <color name="black">#FF000000</color>
+    <color name="card_background">#FFFFFFFF</color>
+    <color name="price_color">#FF6B35</color>
+    <color name="primary">#FF6B35</color>
+    <color name="primary_dark">#E55A2B</color>
+    <color name="ripple_color">#33FF6B35</color>
+    <color name="text_primary">#FF1E1E1E</color>
+    <color name="text_secondary">#FF757575</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Food Menu</string>
+    <string name="food_icon_desc">Food item icon</string>
+    <string name="label_description">Description</string>
+    <string name="label_ingredients">Ingredients</string>
+    <style name="Theme.FoodMenu" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+    </style>
+</resources>
